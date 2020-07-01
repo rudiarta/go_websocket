@@ -29,6 +29,7 @@ func reader(conn *websocket.Conn) {
 		}
 
 		log.Println(string(p))
+		// conn.CloseHandler()(1006, "exit aja")
 
 		if err := conn.WriteMessage(messageType, []byte("Hi there from server")); err != nil {
 			log.Printf("Error write: %v", err.Error())

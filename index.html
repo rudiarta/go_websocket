@@ -23,8 +23,16 @@
             socket.close()
         }
 
+        socket.onclose = (event) => {
+            console.log(event)
+        }
+
         socket.onmessage = (msg) => {
             console.log(msg.data)
+        }
+
+        socket.onerror = (err) => {
+            console.log(err)
         }
     </script>
 </body>
